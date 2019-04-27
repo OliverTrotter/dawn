@@ -1,14 +1,16 @@
 <?php
-function db() {
-  global $link;
-  $link = mysqli_connect(“localhost”, “todouser”, “todo123”, “todolist”) or     die(“couldn’t connect to database”);
-  return $link;
-}
+  function db() {
+    $dbhost = "localhost";
+    $dbuser = "todouser";
+    $dbpass = "todo1234";
+    $db = "todolist";
 
-if(db()) {
-  echo “wawu !!! I’m connected”;
-} else {
-  echo "oh no";
-}
+    $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die ("Connect failed: %s\n". $conn -> error);
 
+    return $conn;
+  }
+
+  function closeConn($conn) {
+    $conn -> close();
+  }
 ?>
