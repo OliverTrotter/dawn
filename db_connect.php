@@ -5,6 +5,8 @@ function db() {
   return $link;
   if(db()) {
     echo “wawu !!! I’m connected”;
+  } else {
+    echo "oh no";
   }
 }
 ?>
